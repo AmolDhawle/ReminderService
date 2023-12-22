@@ -1,5 +1,6 @@
 const express = require("express")
 const bodyParser = require("body-parser");
+const schedule = require('node-schedule');
 
 const { PORT } = require("./config/serverConfig");
 const { sendBasicEmail } = require("./services/email-service");
@@ -12,13 +13,14 @@ const setupAndStartServer = () => {
 
     app.listen(PORT, () => {
         console.log(`Server listening at PORT ${PORT}`);
-
-        sendBasicEmail(
-            "support@microsoft.com.in",
-            "jaiswalbittu590@gmail.com",
-            "this is a testing email",
-            "hey, how are you!"
-        )
+        // schedule.scheduleJob('', () => {
+            sendBasicEmail(
+                "support@microsoft.com.in",
+                "jaiswalbittu590@gmail.com",
+                "messageRegret",
+                "Hello dear candidate, this is to inform you that you cannot login into the fit India exam as the deadline has passed."
+            );
+        
     })
 }
 
