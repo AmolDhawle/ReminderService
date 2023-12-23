@@ -29,10 +29,14 @@ module.exports = (sequelize, DataTypes) => {
     status: {
       type: DataTypes.ENUM,
       allowNull:false,
-      values: ["PENDING", "SUCCESS","FAILED"]
+      values: ["PENDING", "SUCCESS","FAILED"],
+      defaultValue: "PENDING"
     },
-    notificationTime: DataTypes.DATE
-  }, {
+    notificationTime: {
+      type: DataTypes.DATE,
+      allowNull: false
+  },
+ }, {
     sequelize,
     modelName: 'NotificationTicket',
   });
