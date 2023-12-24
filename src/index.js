@@ -7,6 +7,7 @@ const { PORT } = require("./config/serverConfig");
 const { sendBasicEmail } = require("./services/email-service");
 const jobs = require("./utils/job");
 const TicketController = require("./controllers/ticket-controller");
+const { createChannel } = require("./utils/messageQueue")
 
 const app = express();
 
