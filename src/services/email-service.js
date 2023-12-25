@@ -44,10 +44,25 @@ class TicketService{
             return response;
         } catch (error) {
             console.log(error);
-            throw error; // Rethrow the error to propagate it
+            throw error; 
         }
     }
-    
+
+    subscribeEvents = async (payload) => {
+        let service = payload.service;
+        let data = payload.data;
+        switch(service) {
+            case 'CREATE_TICKET': 
+                await this.createNotification(data);
+                break;
+            case 'SEND_BASIC_MAIL': 
+                await this.sendBasicEmail(data);
+                break;
+            default: 
+                console.log("No valid event received");
+                break;
+        }
+    }    
 }
 
 module.exports = new TicketService();
