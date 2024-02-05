@@ -11,19 +11,10 @@ Scheduling Reminder Tasks: Using the node-cron library, this service can schedul
 # Endpoints
 Create Ticket: POST /api/v1/tickets - Create a new ticket.
 
-# Controllers
-TicketController: Handles the creation of tickets.
-
-# Services
-EmailService: Provides functionality for sending reminder emails.
-
-# Utils
-1. job: Contains utility functions for scheduling reminder tasks.
-
-2. messageQueue: Contains utility functions for setting up message queues.
-
 # Getting Started
 To get started with the Reminder Service, follow these steps:
+
+
 
 Clone the repository to your local machine.
 Navigate to the Reminder Service directory.
